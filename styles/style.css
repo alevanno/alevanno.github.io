@@ -1,0 +1,36 @@
+body{
+    background: linear-gradient(to bottom right, rgb(0, 28, 88), rgb(10, 142, 160)) fixed;
+}
+
+#container {
+	background-color: rgba(255, 255, 255, 0.74);
+	margin: 80px 10%;
+	padding: 30px 60px;
+	border-radius: 20px;
+	box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+}
+
+.intro {
+    font-size: 2em;
+    color: rgba(255, 255, 255, 0.74);
+    padding: 50px 0;
+    text-align: center;
+    font-family: "Courier New", "Lucida Console", monospace;
+    opacity: 0;
+}
+
+.icons {
+    text-align: center;
+}
+
+.fab, .fas {
+    font-size: 3em;
+    color: rgba(255, 255, 255, 0.74);
+    padding: 10px;
+    opacity: 0;
+}
+
+.fab:hover, .fas:hover {
+    color: rgb(255, 255, 255);
+    transition: 0.3s;
+}

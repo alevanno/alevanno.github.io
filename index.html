@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+  <link rel="stylesheet" href="styles/style.css">
+
+  <link rel="stylesheet" href="styles/animation.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
+
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <div class="container">
+    
+      <h1 class="ml11">
+        <span class="text-wrapper">
+          <span class="line line1"></span>
+          <span class="letters">Alessandro Vannoni</span>
+        </span>
+      </h1>
+    
+
+    <div class="row intro">
+      <div class="col">
+        Computer Science and Engineering student @PoliMi. <br>
+        Photographer and Violinist when the inspiration strikes. <br>
+        Palm oil free.
+      </div>
+    </div>
+
+    <div class="row icons">
+        <div class="col">
+          <a href="https://github.com/alevanno"><i class="fab fa-github ico""></i></a>
+          <a href="https://www.linkedin.com/in/alessandro-vannoni/"><i class="fab fa-linkedin ico"></i></a>
+          <a href="mailto:alessandro.vannoni@mail.polimi.it"><i class="fas fa-envelope-square ico"></i></a>
+          <a href="https://www.instagram.com/ale.vanno/"><i class="fab fa-instagram ico"></i></a>
+        </div>
+    </div>
+
+  </div>
+  
+
+
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script>
+    // Wrap every letter in a span
+    $('.ml11 .letters').each(function () {
+      $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
+    });
+
+    anime.timeline({ loop: false })
+      .add({
+        targets: '.ml11 .line',
+        scaleY: [0, 1],
+        opacity: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 700
+      })
+      .add({
+        targets: '.ml11 .line',
+        translateX: [0, $(".ml11 .letters").width()],
+        easing: "easeOutExpo",
+        duration: 700,
+        delay: 100,
+        offset: '-=300'
+      })
+      .add({
+        targets: '.ml11 .letter',
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=775',
+        delay: function (el, i) {
+          return 34 * (i + 1)
+        }
+      })
+      .add({
+        targets: '.ml11 .line',
+        translateX: [$(".ml11 .letters").width()],
+        scaleY: [1, 0],
+        opacity: [1, 0.5],
+        easing: "easeOutExpo",
+        duration: 700,
+        offset: '-=500'
+      })
+      .add({
+        targets: '.intro',
+        translateY: [-50, 0],
+        scale: [1.1, 1],
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 1800,
+        offset: '-=800'
+      })
+      .add({
+        targets: '.ico',
+        translateY: [-50, 0],
+        opacity: [0, 1],
+        easing: "easeOutExpo",
+        duration: 2000,
+        offset: '-=1500',
+        delay: function (el, i) {
+          return 34 * (i + 1)
+        }
+      })
+      ;
+  </script>
+</body>
+
+</html>
