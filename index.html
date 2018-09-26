@@ -161,17 +161,18 @@
 
       var menuAnimation = anime({
         targets: '.menu',
-        scale: 20,
-        duration: 1000,
+        scale: [1, 20],
+        duration: 500,
         autoplay: false,
+        //easing: 'linear'
       })
 
       function openMenu(menuCheckbox) {
         if (menuCheckbox.checked) {
-          menuAnimation.play()
+          menuAnimation.restart()
         } else {
-          menuAnimation.play();
           menuAnimation.reverse()
+          menuAnimation.play();
         }
       }
 
