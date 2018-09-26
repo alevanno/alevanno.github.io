@@ -22,6 +22,26 @@
 </head>
 
 <body>
+  <label>
+    <input type='checkbox' onchange="openMenu(this)">
+    <span class='menu'>
+      <span class='hamburger'></span>
+    </span>
+    <ul>
+      <li>
+        <a href='#'>Home</a>
+      </li>
+      <li>
+        <a href='#'>About</a>
+      </li>
+      <li>
+        <a href='#'>Work</a>
+      </li>
+      <li>
+        <a href='#'>Photos</a>
+      </li>
+    </ul>
+  </label>
   <div class="container">
     
       <h1 class="ml11">
@@ -126,7 +146,35 @@
           return 34 * (i + 1)
         }
       })
+      .add({
+        targets: '.menu',
+        translateY: [-30, 0],
+        translateX: [30, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        offset: '-=1800'
+      })
+      /*.add({
+        
+      })*/
       ;
+
+      var menuAnimation = anime({
+        targets: '.menu',
+        scale: 20,
+        duration: 1000,
+        autoplay: false,
+      })
+
+      function openMenu(menuCheckbox) {
+        if (menuCheckbox.checked) {
+          menuAnimation.play()
+        } else {
+          menuAnimation.play();
+          menuAnimation.reverse()
+        }
+      }
+
   </script>
 </body>
 
