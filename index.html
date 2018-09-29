@@ -24,8 +24,8 @@
 <body>
   <label>
     <input type='checkbox' onchange="openMenu(this)">
+    <span class='hamburger'></span>
     <span class='menu'>
-      <span class='hamburger'></span>
     </span>
     <ul>
       <li>
@@ -154,27 +154,64 @@
         duration: 1000,
         offset: '-=1800'
       })
-      /*.add({
-        
-      })*/
-      ;
-
-      var menuAnimation = anime({
-        targets: '.menu',
-        scale: [1, 20],
-        duration: 500,
-        autoplay: false,
-        //easing: 'linear'
+      .add({
+        targets: '.hamburger',
+        //translateY: [-30, 0],
+        //translateX: [30, 0],
+        opacity: [0, 1],
+        duration: 1000,
+        offset: '-=1800'
       })
 
-      function openMenu(menuCheckbox) {
-        if (menuCheckbox.checked) {
-          menuAnimation.restart()
-        } else {
-          menuAnimation.reverse()
-          menuAnimation.play();
-        }
+    var menuAnimation = anime({
+      targets: '.menu',
+      scale: [1, 30],
+      duration: 400,
+      autoplay: false,
+      easing: 'linear'
+    })
+
+    var menuOptions = anime({
+      targets: 'label a',
+      translateY: [-50, 0],
+      translateX: [30, 0],
+      opacity: [0, 1],
+      easing: "easeOutExpo",
+      autoplay: false,
+      duration: 1000,
+      offset: 200,
+      delay: function (el, i) {
+        return 34 * (i + 1)
       }
+    })
+
+    var menuPush = anime ({
+      targets: '.ml11, .intro, .ico',
+      translateX: -200,
+      duration: 400,
+      autoplay: false,
+      easing: 'easeInCubic'
+    })
+
+    function openMenu(menuCheckbox) {
+      if (menuCheckbox.checked) {
+        menuAnimation.restart()
+        //hamburgerAnimation.restart()
+        menuPush.restart()
+        menuOptions.restart()
+      } else {
+        anime({
+          targets: 'label a',
+          opacity: [1, 0],
+          autoplay: false,
+          duration: 1000,
+        }).play()
+        menuAnimation.reverse();
+        menuAnimation.play();
+        menuPush.reverse()
+        menuPush.play();
+      }
+    }
 
   </script>
 </body>
