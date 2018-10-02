@@ -25,8 +25,8 @@
   <label>
     <input type='checkbox' onchange="openMenu(this)">
     <span class='hamburger'></span>
-    <span class='menu'>
-    </span>
+    <span class='menu'></span>
+    <span class='circle'></span>
     <ul>
       <li>
         <a href='#'>Home</a>
@@ -162,13 +162,21 @@
         duration: 1000,
         offset: '-=1800'
       })
+      .add({
+        targets: '.circle',
+        opacity: [1, 0],
+        scale: [0.8, 4],
+        easing: 'linear',
+        duration: 500,
+        offset: '-=1800'
+      })
 
     var menuAnimation = anime({
       targets: '.menu',
       scale: [1, 30],
       duration: 400,
       autoplay: false,
-      easing: 'linear'
+      easing: 'easeInSine'
     })
 
     var menuOptions = anime({
@@ -196,15 +204,18 @@
     function openMenu(menuCheckbox) {
       if (menuCheckbox.checked) {
         menuAnimation.restart()
-        //hamburgerAnimation.restart()
         menuPush.restart()
+        $('label ul').css("visibility", "visible");
         menuOptions.restart()
       } else {
         anime({
           targets: 'label a',
           opacity: [1, 0],
           autoplay: false,
-          duration: 1000,
+          duration: 800,
+          complete: function() {
+            $('label ul').css("visibility", "hidden");
+          }
         }).play()
         menuAnimation.reverse();
         menuAnimation.play();
