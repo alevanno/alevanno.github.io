@@ -33,14 +33,9 @@ body{
 
 .fab, .fas {
     font-size: 3em;
-    color: rgba(255, 255, 255, 0.74);
+    color: rgba(255, 255, 255);
     padding: 10px;
     opacity: 0;
-}
-
-.fab:hover, .fas:hover {
-    color: rgb(255, 255, 255);
-    transition: 0.3s;
 }
 
 label .menu {
@@ -120,9 +115,11 @@ label input:checked + .hamburger:before {
           transform: rotate(90deg);
   top: 0;
 }
+
 /*label input:checked + .menu + ul {
   opacity: 1;
 }*/
+
 label ul {
   visibility: hidden;
   z-index: 200;
@@ -132,6 +129,7 @@ label ul {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
+
 label a {
   margin-bottom: 2em;
   display: block;

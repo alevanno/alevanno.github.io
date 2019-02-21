@@ -29,10 +29,10 @@
     <span class='circle'></span>
     <ul>
       <li>
-        <a href='#'>Home</a>
+        <a href='index.html'>Home</a>
       </li>
       <li>
-        <a href='#'>About</a>
+        <a href='about/about.html'>About</a>
       </li>
       <li>
         <a href='#'>Work</a>
@@ -74,17 +74,14 @@
 
 
 
-
-
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- JavaScript -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+  <script src="lib/anime.min.js"></script>
   <script>
     // Wrap every letter in a span
     $('.ml11 .letters').each(function () {
@@ -105,18 +102,16 @@
         easing: "easeOutExpo",
         duration: 700,
         delay: 100,
-        offset: '-=300'
-      })
+      }, '-=300') 
       .add({
         targets: '.ml11 .letter',
         opacity: [0, 1],
         easing: "easeOutExpo",
         duration: 600,
-        offset: '-=775',
         delay: function (el, i) {
           return 34 * (i + 1)
         }
-      })
+      }, '-=775')
       .add({
         targets: '.ml11 .line',
         translateX: [$(".ml11 .letters").width()],
@@ -124,8 +119,7 @@
         opacity: [1, 0.5],
         easing: "easeOutExpo",
         duration: 700,
-        offset: '-=500'
-      })
+      }, '-=500')
       .add({
         targets: '.intro',
         translateY: [-50, 0],
@@ -133,43 +127,35 @@
         opacity: [0, 1],
         easing: "easeOutExpo",
         duration: 1800,
-        offset: '-=800'
-      })
+      }, '-=800')
       .add({
         targets: '.ico',
         translateY: [-50, 0],
-        opacity: [0, 1],
+        opacity: [0, 0.74],
         easing: "easeOutExpo",
         duration: 2000,
-        offset: '-=1500',
         delay: function (el, i) {
           return 34 * (i + 1)
         }
-      })
+      }, '-=1500')
       .add({
         targets: '.menu',
-        translateY: [-30, 0],
-        translateX: [30, 0],
+        scale: [0.3, 1],
         opacity: [0, 1],
         duration: 1000,
-        offset: '-=1800'
-      })
+      }, '-=1800')
       .add({
         targets: '.hamburger',
-        //translateY: [-30, 0],
-        //translateX: [30, 0],
         opacity: [0, 1],
         duration: 1000,
-        offset: '-=1800'
-      })
+      }, '-=1800')
       .add({
         targets: '.circle',
         opacity: [1, 0],
-        scale: [0.8, 4],
+        scale: [0.3, 4],
         easing: 'linear',
         duration: 500,
-        offset: '-=1800'
-      })
+      }, '-=1800')
 
     var menuAnimation = anime({
       targets: '.menu',
@@ -187,14 +173,11 @@
       easing: "easeOutExpo",
       autoplay: false,
       duration: 1000,
-      offset: 200,
-      delay: function (el, i) {
-        return 34 * (i + 1)
-      }
+      delay: anime.stagger(34, { start: 200 }) 
     })
 
     var menuPush = anime ({
-      targets: '.ml11, .intro, .ico',
+      targets: '.container',
       translateX: -180,
       translateY: [0, 80],
       duration: 400,
@@ -204,8 +187,11 @@
 
     function openMenu(menuCheckbox) {
       if (menuCheckbox.checked) {
-        menuAnimation.restart()
-        menuPush.restart()
+        menuAnimation.play();
+        if (menuPush.reversed) {
+          menuPush.reverse()
+        }
+        menuPush.play()
         $('label ul').css("visibility", "visible");
         menuOptions.restart()
       } else {
@@ -216,14 +202,38 @@
           duration: 800,
           complete: function() {
             $('label ul').css("visibility", "hidden");
+            //anime.remove('label a');
           }
         }).play()
-        menuAnimation.reverse();
-        menuAnimation.play();
-        menuPush.reverse()
+        anime({
+          targets: '.menu',
+          scale: [30, 1],
+          duration: 400,
+          autoplay: false,
+          easing: 'easeOutSine'
+        }).play()
+        if (!menuPush.reversed) {
+          menuPush.reverse()
+        }
         menuPush.play();
       }
     }
+
+    function animateButton(scale, duration, elasticity, opacity) {
+      anime.remove(event.target);
+      anime({
+        targets: event.target,
+        scale: scale,
+        duration: duration,
+        elasticity: elasticity,
+        opacity: opacity
+      });
+    }
+
+    function enterButton() { animateButton(1.1, 600, 400, 1) };
+    function leaveButton() { animateButton(1.0, 500, 300, 0.74) };
+
+    $('.ico').mouseenter(enterButton).mouseleave(leaveButton);
 
   </script>
 </body>
