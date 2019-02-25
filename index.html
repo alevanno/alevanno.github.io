@@ -7,14 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
   <link rel="stylesheet" href="styles/style.css">
 
   <link rel="stylesheet" href="styles/animation.css">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 
   <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
 
@@ -43,14 +46,14 @@
     </ul>
   </label>
   <div class="container">
-    
-      <h1 class="ml11">
-        <span class="text-wrapper">
-          <span class="line line1"></span>
-          <span class="letters">Alessandro Vannoni</span>
-        </span>
-      </h1>
-    
+
+    <h1 class="ml11">
+      <span class="text-wrapper">
+        <span class="line line1"></span>
+        <span class="letters">Alessandro Vannoni</span>
+      </span>
+    </h1>
+
 
     <div class="row intro">
       <div class="col">
@@ -61,25 +64,28 @@
     </div>
 
     <div class="row icons">
-        <div class="col">
-          <a href="https://github.com/alevanno"><i class="fab fa-github ico""></i></a>
-          <a href="https://www.linkedin.com/in/alessandro-vannoni/"><i class="fab fa-linkedin ico"></i></a>
-          <a href="mailto:alessandro.vannoni@mail.polimi.it"><i class="fas fa-envelope-square ico"></i></a>
-          <a href="https://www.instagram.com/ale.vanno/"><i class="fab fa-instagram ico"></i></a>
-        </div>
+      <div class="col">
+        <a href="https://github.com/alevanno"><i class="fab fa-github ico""></i></a>
+        <a href=" https://www.linkedin.com/in/alessandro-vannoni/"> <i class="fab fa-linkedin ico"></i></a>
+        <a href="mailto:alessandro.vannoni@mail.polimi.it"><i class="fas fa-envelope-square ico"></i></a>
+        <a href="https://www.instagram.com/ale.vanno/"><i class="fab fa-instagram ico"></i></a>
+      </div>
     </div>
 
   </div>
-  
+
 
 
 
   <!-- JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
     crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
   <script src="lib/anime.min.js"></script>
   <script>
@@ -102,7 +108,7 @@
         easing: "easeOutExpo",
         duration: 700,
         delay: 100,
-      }, '-=300') 
+      }, '-=300')
       .add({
         targets: '.ml11 .letter',
         opacity: [0, 1],
@@ -173,10 +179,10 @@
       easing: "easeOutExpo",
       autoplay: false,
       duration: 1000,
-      delay: anime.stagger(34, { start: 200 }) 
+      delay: anime.stagger(34, { start: 200 })
     })
 
-    var menuPush = anime ({
+    var menuPush = anime({
       targets: '.container',
       translateX: -180,
       translateY: [0, 80],
@@ -200,7 +206,7 @@
           opacity: [1, 0],
           autoplay: false,
           duration: 800,
-          complete: function() {
+          complete: function () {
             $('label ul').css("visibility", "hidden");
             //anime.remove('label a');
           }
@@ -234,6 +240,10 @@
     function leaveButton() { animateButton(1.0, 500, 300, 0.74) };
 
     $('.ico').mouseenter(enterButton).mouseleave(leaveButton);
+
+    $(document).ready(function () {
+      $('input:checkbox').prop('checked', false);
+    }); 
 
   </script>
 </body>
