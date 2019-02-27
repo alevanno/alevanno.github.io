@@ -21,6 +21,7 @@
     bottom: 0;
     left: 50%;
     margin-left: -3px;
+    z-index: -1;
   }
   
   /* Container around content */
@@ -39,10 +40,10 @@
     height: 25px;
     right: -17px;
     background-color: white;
-    border: 4px solid #FF9F55;
+    border: 4px solid rgb(0, 28, 88);
     top: 15px;
     border-radius: 50%;
-    z-index: 1;
+    
   }
   
   /* Place the container to the left */
