@@ -9,6 +9,7 @@
     max-width: 1200px;
     margin: auto;
     font-family: 'Courier New', Courier, monospace;
+    opacity: 0;
   }
   
   /* The actual timeline (the vertical ruler) */
@@ -16,7 +17,7 @@
     content: '';
     position: absolute;
     width: 6px;
-    background-color: white;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255) 5%, rgb(255, 255, 255) 95%, rgba(255, 255, 255, 0) );
     top: 0;
     bottom: 0;
     left: 50%;
