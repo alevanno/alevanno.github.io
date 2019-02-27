@@ -2,6 +2,12 @@
     box-sizing: border-box;
   }
   
+  body{
+    background: linear-gradient(to bottom right, rgb(0, 88, 59), rgb(10, 142, 160)) fixed;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: auto;
+}
   
   /* The actual timeline (the vertical ruler) */
   .timeline {
@@ -10,6 +16,7 @@
     margin: auto;
     font-family: 'Courier New', Courier, monospace;
     opacity: 0;
+    padding: 80px 0;
   }
   
   /* The actual timeline (the vertical ruler) */
