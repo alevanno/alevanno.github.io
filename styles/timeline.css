@@ -7,13 +7,16 @@
     overflow-x: hidden;
     overflow-y: scroll;
     height: auto;
-}
+  }
+
+  /* Hide the scrollbar */
+  body::-webkit-scrollbar { width: 0 !important }
   
   /* The actual timeline (the vertical ruler) */
   .timeline {
     position: relative;
     max-width: 1200px;
-    margin: auto;
+    margin: 100px auto;
     font-family: 'Courier New', Courier, monospace;
     opacity: 0;
     padding: 80px 0;
@@ -24,7 +27,7 @@
     content: '';
     position: absolute;
     width: 6px;
-    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255) 5%, rgb(255, 255, 255) 95%, rgba(255, 255, 255, 0) );
+    background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.74) 5%, rgb(255, 255, 255) 95%, rgba(255, 255, 255, 0) );
     top: 0;
     bottom: 0;
     left: 50%;
