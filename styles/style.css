@@ -10,6 +10,10 @@ body{
     align-items:center;
 }
 
+body#about {
+  background: linear-gradient(to bottom right, rgb(88, 0, 44), rgb(0, 40, 126)) fixed;
+}
+
 #container {
 	background-color: rgba(255, 255, 255, 0.74);
 	margin: 80px 10%;
@@ -25,6 +29,11 @@ body{
     text-align: center;
     font-family: "Courier New", "Lucida Console", monospace;
     opacity: 0;
+}
+
+.intro#about-intro {
+  font-size: 1.8em;
+  text-align: left
 }
 
 .icons {
