@@ -31,6 +31,7 @@
   }
   
   .ml11 .letter {
+    opacity: 0;
     display: inline-block;
     line-height: 1em;
   }
