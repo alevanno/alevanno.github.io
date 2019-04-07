@@ -92,7 +92,7 @@
     // Wrap every letter in a span
     $('.ml11 .letters').each(function () {
       $(this).html($(this).text().replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>"));
-    });
+    }).css('opacity', '1');
 
     anime.timeline({ loop: false })
       .add({

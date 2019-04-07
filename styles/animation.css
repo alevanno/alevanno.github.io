@@ -35,3 +35,7 @@
     display: inline-block;
     line-height: 1em;
   }
+
+  .ml11 .letters {
+    opacity: 0;
+  }
