@@ -33,7 +33,8 @@ body#about {
 
 .intro#about-intro {
   font-size: 1.8em;
-  text-align: left
+  text-align: left;
+  opacity: 1;
 }
 
 .icons {
@@ -45,6 +46,11 @@ body#about {
     color: rgba(255, 255, 255);
     padding: 10px;
     opacity: 0;
+}
+
+.intro#about-intro p {
+  margin: 0;
+  opacity: 0;
 }
 
 label .menu {

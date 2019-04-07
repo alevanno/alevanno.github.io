@@ -54,13 +54,19 @@
         </div>
         <div id="about-intro" class="row intro">
             <div class="col">
-                Living life one question at a time, I approach every new challenge with a curious mindset.<br>
-                I have an analytical mind with an artistic twist, so my interests are quite multifaceted.
-                I'm passionate about technology in general and excited about the possibilities that the power of data
-                holds for our future:
-                that's why I'm specializing my skills in Artificial Intelligence and Machine Learning.<br>
-                When I'm not in front of a screen, I discover and photograph new places in the city, keep myself in
-                shape at the gym and make some sweet origami.
+                <p>
+                    Living life one question at a time, I approach every new challenge with a curious mindset.
+                </p><br>
+                <p>
+                    I have an <b>analytical mind with an artistic twist</b>, so my interests are quite multifaceted.
+                    I'm passionate about technology in general and excited about the possibilities that the <b>power of data</b>
+                    holds for our future:
+                    that's why I'm specializing my skills in <b>Artificial Intelligence</b> and <b>Machine Learning</b>.
+                </p><br>
+                <p>
+                    When I'm not in front of a screen, I discover and photograph new places in the city, keep myself in
+                    shape at the gym and make some sweet origami.
+                </p>
             </div>
         </div>
 
@@ -96,13 +102,14 @@
                 duration: 1800,
             })
             .add({
-                targets: '.intro',
+                targets: '.intro#about-intro p',
                 translateY: [-50, 0],
                 scale: [1.1, 1],
                 opacity: [0, 1],
                 easing: "easeOutExpo",
                 duration: 1800,
-            }, '-=1300')
+                delay: anime.stagger(100)
+            }, '-=1500')
             .add({
                 targets: '.menu',
                 scale: [0.3, 1],
