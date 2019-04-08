@@ -48,6 +48,22 @@ body#about {
     opacity: 0;
 }
 
+.navigation {
+  color: rgba(255, 255, 255, 0.3);
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-weight: 700;
+  font-size: 2.5em;
+  position: absolute;
+  top: 10px;
+  left: 30px;
+}
+
+.navigation .brdcrmb {
+  font-family: "Courier New", "Lucida Console", monospace;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 400;
+}
+
 .intro#about-intro p {
   margin: 0;
   opacity: 0;
