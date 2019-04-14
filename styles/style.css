@@ -4,22 +4,37 @@ html{
 
 body{
     background: linear-gradient(to bottom right, rgb(0, 28, 88), rgb(10, 142, 160)) fixed;
-    overflow: hidden;
+    font-size: 1rem;
+    overflow-x: hidden;
+    overflow-y: scroll;
     height: 100%;
-    display: flex;
-    align-items:center;
+}
+
+/* Hide the scrollbar */
+body::-webkit-scrollbar { width: 0 !important }
+
+body#home {
+  display: flex;
+  align-items: center;
 }
 
 body#about {
   background: linear-gradient(to bottom right, rgb(88, 0, 44), rgb(0, 40, 126)) fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: unset
 }
 
 #container {
-	background-color: rgba(255, 255, 255, 0.74);
+  background-color: rgba(255, 255, 255, 0.74);
 	margin: 80px 10%;
 	padding: 30px 60px;
 	border-radius: 20px;
 	box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+}
+
+#origami {
+  height: 200px; object-fit: cover; opacity:0
 }
 
 .intro {
@@ -32,7 +47,7 @@ body#about {
 }
 
 .intro#about-intro {
-  font-size: 1.8em;
+  font-size: 1.6em;
   text-align: left;
   opacity: 1;
 }
@@ -53,9 +68,8 @@ body#about {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-weight: 700;
   font-size: 2.5em;
-  position: absolute;
-  top: 10px;
-  left: 30px;
+  /*position: absolute;*/
+  margin: 10px 30px;
   opacity: 0;
 }
 
@@ -170,4 +184,9 @@ label a {
   font-family: "Courier New", "Lucida Console", monospace;
   text-decoration: none;
   opacity: 0;
+}
+
+@media screen and (max-width: 1200px){
+  body{font-size: 0.8rem}
+  #origami{height: 170px}
 }
