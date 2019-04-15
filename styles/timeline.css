@@ -3,7 +3,7 @@
   }
   
   body{
-    background: linear-gradient(to bottom right, rgb(0, 83, 116), rgb(204, 75, 0)) fixed;
+    background: linear-gradient(to bottom right, rgb(0, 83, 116), rgb(204, 75, 0)) fixed no-repeat;
     overflow-x: hidden;
     overflow-y: scroll;
     height: auto;
