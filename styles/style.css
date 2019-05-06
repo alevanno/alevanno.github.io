@@ -182,8 +182,31 @@ label a {
   color: #000;
   font-size: 2em;
   font-family: "Courier New", "Lucida Console", monospace;
+  font-weight: bold;
   text-decoration: none;
   opacity: 0;
+}
+
+label a:hover {
+  background: gray;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+label a#home-link:hover {
+  background: linear-gradient(to bottom right, rgb(0, 43, 136), rgb(10, 163, 184));
+  -webkit-background-clip: text;
+}
+
+label a#about-link:hover {
+  background: linear-gradient(to bottom right, rgb(163, 0, 82), rgb(0, 69, 219));
+  -webkit-background-clip: text;
+}
+
+label a#work-link:hover {
+  background: linear-gradient(to bottom right, rgb(0, 117, 163), rgb(235, 86, 0));
+  -webkit-background-clip: text;
 }
 
 @media screen and (max-width: 1200px){
