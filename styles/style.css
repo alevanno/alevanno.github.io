@@ -25,14 +25,6 @@ body#about {
   align-items: unset
 }
 
-#container {
-  background-color: rgba(255, 255, 255, 0.74);
-	margin: 80px 10%;
-	padding: 30px 60px;
-	border-radius: 20px;
-	box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
-}
-
 #origami {
   height: 200px; object-fit: cover; opacity:0
 }
@@ -180,7 +172,7 @@ label a {
   margin-bottom: 2em;
   display: block;
   color: #000;
-  font-size: 2em;
+  font-size: 2.1em;
   font-family: "Courier New", "Lucida Console", monospace;
   font-weight: bold;
   text-decoration: none;
