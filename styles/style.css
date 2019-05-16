@@ -201,6 +201,10 @@ label a#work-link:hover {
   -webkit-background-clip: text;
 }
 
+ul li:nth-of-type(4) {
+  display:none;
+}
+
 @media screen and (max-width: 1200px){
   body{font-size: 0.8rem}
   #origami{height: 170px}

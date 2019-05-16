@@ -107,6 +107,10 @@
     position: relative;
     border-radius: 6px;
   }
+
+  .left .content h2 {
+    text-align: right;
+  }
   
   /* Media queries - Responsive timeline on screens less than 600px wide */
   @media screen and (max-width: 600px) {
