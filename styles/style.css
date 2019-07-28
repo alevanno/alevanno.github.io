@@ -159,6 +159,7 @@ label input:checked + .hamburger:before {
 }*/
 
 label ul {
+  list-style-type: none;
   visibility: hidden;
   z-index: 200;
   position: absolute;
@@ -189,16 +190,19 @@ label a:hover {
 label a#home-link:hover {
   background: linear-gradient(to bottom right, rgb(0, 43, 136), rgb(10, 163, 184));
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 label a#about-link:hover {
   background: linear-gradient(to bottom right, rgb(163, 0, 82), rgb(0, 69, 219));
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 label a#work-link:hover {
   background: linear-gradient(to bottom right, rgb(0, 117, 163), rgb(235, 86, 0));
   -webkit-background-clip: text;
+  background-clip: text;
 }
 
 ul li:nth-of-type(4) {
