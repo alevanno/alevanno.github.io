@@ -145,6 +145,7 @@ body::-webkit-scrollbar { width: 0 !important }
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
+    font-size: 1.1em;
   }
 
 /* Make sure that all arrows are pointing leftwards */
