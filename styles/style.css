@@ -15,7 +15,10 @@ html{
 
 .body-wrapper#home {
   display: flex;
-  align-items: center;
+}
+
+.body-wrapper#home .container {
+  margin: auto;
 }
 
 .body-wrapper#about {
@@ -66,6 +69,7 @@ html{
 }
 
 .navigation .brdcrmb {
+  display: inline-block;
   font-family: "Courier New", "Lucida Console", monospace;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 400;
@@ -160,6 +164,8 @@ label input:checked + .hamburger:before {
 
 label ul {
   list-style-type: none;
+  padding: 0;
+  text-align: center;
   visibility: hidden;
   z-index: 200;
   position: fixed;
@@ -210,10 +216,12 @@ ul li:nth-of-type(4) {
 }
 
 @media screen and (max-width: 1200px){
-  body{font-size: 0.8rem}
+  .body-wrapper{font-size: 0.8rem}
   #origami{height: 170px}
 }
 
-@media screen and (max-width: 450px){
+@media screen and (max-width: 600px){
   .ml11{font-size: 2.5em;}
+  .intro{font-size: 1.8em;}
+  .navigation{font-size: 1.8em}
 }
