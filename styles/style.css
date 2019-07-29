@@ -111,7 +111,7 @@ label .circle {
 
 label .hamburger {
   position: fixed;
-  top: 35px;
+  top: 40px;
   right: 25px;
   z-index: 101;
   width: 30px;
@@ -224,5 +224,17 @@ ul li:nth-of-type(4) {
   .ml11{font-size: 2.5em;}
   .intro{font-size: 1.8em; padding: 25px 0}
   .navigation{font-size: 1.8em}
-  .ml11 {padding-top: 50px}
+  .ml11 {padding-top: 40px}
+  label .menu {
+    right: -75px;
+    top: -75px;
+    width: 150px;
+    height: 150px;
+  }
+  label .hamburger {
+    top: 30px;
+    right: 15px;
+    width: 30px;
+    height: 2px;
+  }
 }
