@@ -40,7 +40,7 @@ body::-webkit-scrollbar { width: 0 !important }
 }
 
 /* Container around content */
-.container {
+.baloon {
   padding: 10px 40px;
   position: relative;
   background-color: inherit;
@@ -48,7 +48,7 @@ body::-webkit-scrollbar { width: 0 !important }
 }
 
 /* The circles on the timeline */
-.container::after {
+.baloon::after {
   content: '';
   position: absolute;
   width: 25px;
@@ -141,14 +141,14 @@ body::-webkit-scrollbar { width: 0 !important }
   }
 
 /* Full-width containers */
-  .container {
+  .baloon {
     width: 100%;
     padding-left: 70px;
     padding-right: 25px;
   }
 
 /* Make sure that all arrows are pointing leftwards */
-  .container::before {
+  .baloon::before {
     left: 60px;
     border: medium solid white;
     border-width: 10px 10px 10px 0;
