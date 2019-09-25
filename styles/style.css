@@ -15,6 +15,7 @@ html{
 
 .body-wrapper#home {
   display: flex;
+  flex-direction: column;
 }
 
 .body-wrapper#home .container {
@@ -56,6 +57,14 @@ html{
     color: rgba(255, 255, 255);
     padding: 10px;
     opacity: 0;
+}
+
+.bottom-text {
+  color: rgba(255, 255, 255, 0.4);
+  font-family: "Courier New", "Lucida Console", monospace;
+  font-size: 1.2em;
+  /*position: fixed;*/
+  text-align: center
 }
 
 .navigation {
