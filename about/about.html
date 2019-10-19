@@ -46,8 +46,6 @@
 
         <div class="container">
 
-
-
             <div class="row">
                 <div class="col">
                     <img id="origami" src="../images/pngkey.com-crane-png-w.png" alt="Origami" class="mx-auto d-block">
@@ -145,6 +143,12 @@
                 opacity: [0, 1],
                 duration: 2000,
             }, '-=1400')
+            .add({
+                targets: '.bottom-text',
+                opacity: [0, 1],
+                easing: 'linear',
+                duration: 300,
+            }, '-=2000')
 
     </script>
 </body>

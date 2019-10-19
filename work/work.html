@@ -199,6 +199,12 @@
                 opacity: [0, 1],
                 duration: 2000,
             }, '-=900')
+            .add({
+                targets: '.bottom-text',
+                opacity: [0, 1],
+                easing: 'linear',
+                duration: 300,
+            }, '-=2000')
 
         /*This target is different from the one in common_anim.js */
         var menuPush = anime({

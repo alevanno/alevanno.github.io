@@ -29,6 +29,10 @@ html{
   align-items: unset
 }
 
+.body-wrapper#about .container {
+  margin: auto;
+}
+
 #origami {
   height: 200px; object-fit: cover; opacity:0
 }
@@ -64,7 +68,8 @@ html{
   font-family: "Courier New", "Lucida Console", monospace;
   font-size: 1.2em;
   /*position: fixed;*/
-  text-align: center
+  text-align: center;
+  opacity: 0
 }
 
 .navigation {
