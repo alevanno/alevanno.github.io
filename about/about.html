@@ -95,6 +95,12 @@
 
         anime.timeline({ loop: false })
             .add({
+                targets: 'body',
+                opacity: [0, 1],
+                easing: "linear",
+                duration: 200
+            })
+            .add({
                 targets: '#origami',
                 translateX: [50, 0],
                 translateY: [-80, 0],

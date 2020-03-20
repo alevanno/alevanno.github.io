@@ -104,6 +104,12 @@
 
     anime.timeline({ loop: false })
       .add({
+        targets: 'body',
+        opacity: [0, 1],
+        easing: "linear",
+        duration: 200
+      })
+      .add({
         targets: '.ml11 .line',
         scaleY: [0, 1],
         opacity: [0.5, 1],

@@ -153,6 +153,12 @@
 
         anime.timeline({ loop: false })
             .add({
+                targets: 'body',
+                opacity: [0, 1],
+                easing: "linear",
+                duration: 200
+            })
+            .add({
                 targets: '.timeline',
                 translateY: [-80, 0],
                 opacity: [0, 1],

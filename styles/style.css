@@ -2,6 +2,10 @@ html{
   height: 100%
 }
 
+body{
+  opacity: 0
+}
+
 .body-wrapper{
     background: linear-gradient(to bottom right, rgb(0, 28, 88), rgb(10, 142, 160)) fixed no-repeat;
     font-size: 1rem;
@@ -106,6 +110,7 @@ label .menu {
   opacity: 0;
   box-shadow: -3px 3px 10px 0px rgba(48,48,48,0.3);
   cursor: pointer;
+  will-change: transform;
 }
 
 label .circle {
