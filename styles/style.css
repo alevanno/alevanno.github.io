@@ -56,6 +56,10 @@ body{
   opacity: 1;
 }
 
+.intro#work-intro {
+  padding: 20px 0;
+}
+
 .icons {
     text-align: center;
 }

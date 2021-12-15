@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+}
+
+.body-wrapper {
+  background: linear-gradient(to bottom right, #19547b, #ffd89b) fixed no-repeat;
+}
+/* #ffd89b → #19547b*/
+
+
+body {
+  margin: 0;
+}
+
+/* font-family: 'Courier New', Courier, monospace;*/
+
+
+/* Container around content */
+.baloon {
+  margin: 20px 0px;
+  /* padding: 10px 40px; */
+  position: relative;
+  background-color: inherit;
+  font-family: 'Courier New', Courier, monospace;
+  /* the following part was in content */
+  background-color: white;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+}
+
+.content h2 {
+  font-size: 130%
+}
+
+.content h3 {
+  font-size: 100%;
+  font-weight: bold;
+}
+
+
+.logo {
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+.fab, .fas {
+    font-size: 1em;
+    color: rgba(0,0,0);
+    padding: 10px;
+    opacity: 1;
+}
+
+.content a, .content a:visited, .content a:hover, .content a:active {
+  color: darkcyan;
+  text-decoration: none;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide 
+@media screen and (max-width: 600px) {
+
+/* Full-width containers 
+  .baloon {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    font-size: 1.1em;
+  }
+}
+*/
