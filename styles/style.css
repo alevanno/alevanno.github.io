@@ -6,11 +6,17 @@ body{
   opacity: 0
 }
 
+.background {
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  /* z-index usage is up to you.. although there is no need of using it because the default stack context will work. */
+  z-index: -1;
+}
+
 .body-wrapper{
-    background: linear-gradient(to bottom right, rgb(0, 28, 88), rgb(10, 142, 160)) fixed no-repeat;
     font-size: 1rem;
-    overflow-x: hidden;
-    overflow-y: scroll;
     height: 100vh;
 }
 
@@ -26,8 +32,11 @@ body{
   margin: auto;
 }
 
+.background#home-bg {
+  background: linear-gradient(to bottom right, rgb(0, 28, 88), rgb(10, 142, 160)) fixed no-repeat;
+}
+
 .body-wrapper#about {
-  background: linear-gradient(to bottom right, rgb(88, 0, 44), rgb(0, 40, 126)) fixed no-repeat;
   display: flex;
   flex-direction: column;
   align-items: unset
@@ -35,6 +44,10 @@ body{
 
 .body-wrapper#about .container {
   margin: auto;
+}
+
+.background#about-bg {
+  background: linear-gradient(to bottom right, rgb(88, 0, 44), rgb(0, 40, 126)) fixed no-repeat;
 }
 
 #origami {
@@ -230,7 +243,7 @@ label a#about-link:hover {
 }
 
 label a#work-link:hover {
-  background: linear-gradient(to bottom right, rgb(0, 117, 163), rgb(235, 86, 0));
+  background: linear-gradient(to bottom right, #19547b, #ffd89b);
   -webkit-background-clip: text;
   background-clip: text;
 }
