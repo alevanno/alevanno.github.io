@@ -89,3 +89,7 @@
   color: darkcyan;
   text-decoration: none;
 }
+
+.btn-spacer {
+  margin-top: 10px;
+}
