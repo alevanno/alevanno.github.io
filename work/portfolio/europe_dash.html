@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+
+    <title>Europe DESI Dashboard</title>
+
+    <style>
+        #title {
+            font-size: 2.5rem;
+            line-height: 1.25;
+            letter-spacing: -.1rem;
+            font-weight: 300;
+            text-align: center;
+            margin: 15px 0 0;
+        }
+
+        body {
+            font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        }
+
+        .intro {
+            width: 1035px;
+            margin: 0 auto;
+        }
+
+        .inner {
+            position: absolute;
+            z-index: 1;
+            margin-top: 21px;
+            margin-left: 40px;
+        }
+
+        .tooltip {
+            font-size: 0.82em;
+            color: rgb(50, 50, 50);
+            margin-bottom: 8px;
+        }
+
+        .collapsible {
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            height: 31px;
+            margin: 0;
+            padding: 0 10px;
+            font-size: 0.82rem;
+            margin-right: 8px;
+            color: #333;
+        }
+
+        .active,
+        .collapsible:hover {
+            color: #ccc;
+        }
+
+        .collapsible:after {
+            content: '\02795';
+            /* Unicode character for "plus" sign (+) */
+            font-size: 0.7rem;
+            color: black;
+            float: left;
+            margin-right: 5px;
+        }
+
+        .active:after {
+            content: "\2796";
+            /* Unicode character for "minus" sign (-) */
+        }
+
+        .content {
+            display: none;
+            overflow: hidden;
+        }
+
+        .infobox {
+            display: none;
+            width: 950px;
+            height: 80px;
+            box-sizing: border-box;
+            margin-top: 20px;
+            background-color: rgba(255, 255, 255);
+            font-size: 0.8em;
+            padding: 0 180px;
+            justify-content: center;
+            align-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .embedded {
+            margin: 0 auto;
+            width: 1035px;
+            height: 940px;
+            display: block;
+            overflow: hidden;
+        }
+
+        embed {
+            width: 1215px;
+            height: 1100px;
+            position: relative;
+            top: -87px;
+            left: -95px;
+            transform: scale(0.85);
+        }
+
+        .name {
+            font-size: 0.8em;
+            color: gray;
+            margin: 0 auto;
+            width: 1035px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="intro">
+        <h1 id="title"><strong>DESI </strong>Choropleth map</h1>
+    </div>
+
+    <div class="embedded">
+        <div class="inner">
+            <div class="tooltip">Hover to get <strong>more information</strong></div>
+            <button type="button" class="collapsible">What is the DESI?</button>
+            <button type="button" class="collapsible">Dataset</button>
+            <button type="button" class="collapsible">Sources</button>
+
+            <div class="infobox" id="info-desi">
+                <p>
+                    The Digital Economy and Society Index (DESI) is a composite index that summarises relevant
+                    indicators on
+                    Europe’s digital performance and tracks the evolution of EU Member States in digital
+                    competitiveness.
+                </p>
+            </div>
+
+            <div class="infobox" id="info-dataset">
+                <p>
+                    The dataset contains information on the indicators that describe the 5 main DESI policy areas. The
+                    data
+                    spans the
+                    28 EU member states (pre-Brexit), over the years 2015-2020.
+                </p>
+            </div>
+
+            <div class="infobox" id="info-sources">
+                <p>
+                    The
+                    majority of DESI indicators come from Eurostat, the statistical office of the European Union. Some
+                    broadband
+                    indicators are collected by the Commission services from the Member States through the
+                    Communications
+                    Committee. Other indicators, such as some e-government and broadband indicators, are based on data
+                    derived
+                    from studies prepared for the Commission.
+                </p>
+            </div>
+
+        </div>
+
+        <embed src="https://europe-dash.herokuapp.com/">
+
+    </div>
+
+    <div class="name">by <strong>Alessandro Vannoni</strong></div>
+
+</body>
+
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var box = document.getElementsByClassName("infobox")
+    /*var info_desi = document.getElementById('info-desi');
+    var info_dataset = document.getElementById('info-dataset');
+    var info_sources = document.getElementById('info-sources');*/
+
+
+    for (let i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("mouseover", function () {
+            this.classList.toggle("active"); //adds or removes "active" from the list of classes of that elem
+
+            box[i].style.display = "flex";
+
+            /*var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }*/
+
+        });
+        coll[i].addEventListener("mouseout", function () {
+            this.classList.toggle("active");
+
+            box[i].style.display = "none";
+
+        });
+    }
+</script>
