@@ -18,15 +18,12 @@ body{
 .body-wrapper{
     font-size: 1rem;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Hide the scrollbar */
 .body-wrapper::-webkit-scrollbar { width: 0 !important }
-
-.body-wrapper#home {
-  display: flex;
-  flex-direction: column;
-}
 
 .body-wrapper#home .container {
   margin: auto;
@@ -37,8 +34,6 @@ body{
 }
 
 .body-wrapper#about {
-  display: flex;
-  flex-direction: column;
   align-items: unset
 }
 
