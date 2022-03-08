@@ -188,6 +188,7 @@
             </p>
             <p>The network only contains users that appear in more than one project, to isolate more clearly a
                 knowledge-spreading network.</p>
+            <p>This means that this network is a subset of graph <span class="graph-num graph-2">2</span>. </p>
         </div>
         <div class="infobox-content" id="content-2a_SH">
             <h3>Graph <span class="graph-num graph-1">1</span>: Structural Hole spanners</h3>
@@ -202,7 +203,8 @@
             </p>
             <p>The network only contains users that appear in more than one project, to isolate more clearly a
                 knowledge-spreading network.</p>
-            <p>Structural Hole spanners detection is performed using Burt’s constraint measure. The constraint
+            <p>This means that this network is a subset of graph <span class="graph-num graph-2">2</span>. </p>
+            <p>Structural Hole spanners detection is performed using <b>Burt’s constraint measure</b>. The constraint
                 coefficient uses the degree of dependence of nodes on the other nodes as the evaluation criteria.
                 The greater the value, the stronger the constraint, the stronger the dependence, and the lower the
                 ability to cross the structural hole. SH spanners will likely have a lower constraint value.
@@ -226,7 +228,7 @@
             </p>
             <p>This is the general network, where every user in the dataset is present as a node, which allows for a
                 wide-ranging overview. </p>
-            <p>The node positions are obtained through the Fruchterman-Reingold graph drawing algorithm, explained
+            <p>The node positions are obtained through the <b>Fruchterman-Reingold graph drawing algorithm</b>, explained
                 later.
 
             </p>
@@ -246,7 +248,8 @@
             </p>
             <p>This is the general network, where every user in the dataset is present as a node, which allows for a
                 wide-ranging overview. </p>
-            <p>Community detection is performed on the network using the <b>Louvain method</b>: multiple iteration heuristic
+            <p>Community detection is performed on the network using the <b>Louvain method</b>: multiple iteration
+                heuristic
                 that starts from an initial state of considering every node as a single community and iteratively
                 improving the quality of community assignment until the gain in modularity becomes negligible.
             </p>
@@ -266,7 +269,7 @@
                 <br>
                 <b>Assortativity:</b> 0.051746
             </p>
-            <p>SH spanners are identified with the 350 most important users according to the PageRank metric.</p>
+            <p>SH spanners are identified with the 350 most important users according to the <b>PageRank metric</b>.</p>
             <p>PageRank gives an “importance score” to nodes by counting the number of links to a node and their
                 respective PageRank importance iteratively, until it reaches convergence.
             </p>
