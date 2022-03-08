@@ -28,6 +28,7 @@
         body {
             font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             /*font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+            opacity: 0;
         }
 
         .infobox {
@@ -309,7 +310,24 @@
 
 </body>
 
+
+<script src="../../lib/anime.min.js"></script>
 <script>
+    anime.timeline({ loop: false })
+                .add({
+                    targets: 'body',
+                    opacity: [0, 1],
+                    easing: "linear",
+                    duration: 400
+                })
+                .add({
+                    targets: '.img-container',
+                    opacity: [0, 1],
+                    easing: "linear",
+                    duration: 200,
+                })
+
+
     const radioButtons = document.querySelectorAll('input[name="graph"]');
     const infoContent = document.getElementsByClassName('infobox-content')
 
@@ -322,13 +340,30 @@
                     break;
                 }
             }
-            //alert(selectedGraph);
-            document.getElementById("graph-img").src = "thesis_graphs/" + selectedGraph + ".png";
+            //document.getElementById("graph-img").src = "thesis_graphs/" + selectedGraph + ".png";
 
             for (let i = 0; i < infoContent.length; i++) {
-                infoContent[i].style.display = "none"
+                anime.timeline()
+                    .add({
+                        targets: [infoContent[i], '.img-container'],
+                        opacity: [1, 0],
+                        easing: "linear",
+                        duration: 100,
+                        complete: function(anim) {
+                            infoContent[i].style.display = "none";
+                            document.getElementById("content-" + selectedGraph).style.display = "block";
+                            document.getElementById("graph-img").src = "thesis_graphs/" + selectedGraph + ".png";
+                        }
+                    })
+                    .add({
+                        targets: [infoContent[i], '.img-container'],
+                        opacity: [0, 1],
+                        easing: "linear",
+                        duration: 200,
+                    });
+                //infoContent[i].style.display = "none"
             }
-            document.getElementById("content-" + selectedGraph).style.display = "block"
+            //document.getElementById("content-" + selectedGraph).style.display = "block"
         });
     });
 
