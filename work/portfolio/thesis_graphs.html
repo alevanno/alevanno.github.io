@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.ico" />
+
+    <title>GitHub collaboration graphs</title>
+
+    <style>
+        #title {
+            font-size: 2.5rem;
+            line-height: 1.25;
+            /*letter-spacing: -.1rem;*/
+            font-weight: 300;
+            text-align: center;
+            margin: 15px 0 0;
+        }
+
+        body {
+            font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            /*font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+        }
+
+        .infobox {
+            padding: 10px 25px;
+            position: fixed;
+            top: 20px;
+            z-index: 100;
+            width: 200px;
+            height: auto;
+            background: rgb(255, 255, 255);
+            border-radius: 25px;
+            box-shadow: 0px 3px 10px 0px rgba(48, 48, 48, 0.3);
+            font-size: 0.9em;
+        }
+
+        .infobox#info-left {
+            left: 30px;
+        }
+
+        .infobox#info-right {
+            right: 30px;
+        }
+
+        .infobox-content {
+            display: none;
+        }
+
+        .infobox-content#content-2b_comm {
+            display: block;
+        }
+
+        .selectbox {
+            padding: 20px;
+            position: fixed;
+            top: 20px;
+            z-index: 101;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            height: auto;
+            background: rgb(255, 255, 255);
+            border-radius: 25px;
+            box-shadow: 0px 3px 10px 0px rgba(48, 48, 48, 0.3)
+        }
+
+        .tooltip {
+            font-size: 0.82em;
+            color: rgb(50, 50, 50);
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .radio-toolbar {
+            background-color: rgb(228, 228, 228);
+            border-radius: 10px;
+            padding: 2px;
+        }
+
+        .radio-toolbar input[type="radio"] {
+            opacity: 0;
+            position: fixed;
+            width: 0;
+        }
+
+        .radio-toolbar label {
+            display: inline-block;
+            background-color: rgba(221, 221, 221, 0);
+            padding: 5px 10px;
+            font-size: 0.9em;
+            /*border: 2px solid #444;*/
+            border-radius: 9px;
+            transition: 0.3s;
+        }
+
+        .radio-toolbar label:hover {
+            background-color: rgba(255, 255, 255, 0.7);
+        }
+
+        .radio-toolbar input[type="radio"]:checked+label {
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 2px 8px 0px rgba(48, 48, 48, 0.3);
+            /*border-color: rgb(0, 0, 0);*/
+        }
+
+        /*.radio-toolbar input[type="radio"]:focus + label {
+            border: 2px dashed #444;
+        }*/
+
+        .graph-num {
+            font-weight: 700;
+        }
+
+        .graph-1 {
+            color: rgb(134, 177, 42);
+        }
+
+        .graph-2 {
+            color: rgb(47, 159, 165);
+        }
+
+        .img-container {
+            position: absolute;
+            top: 70px;
+            bottom: 0px;
+            height: fill;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+
+        img {
+            max-height: 100%;
+            transform: scale(1.03);
+        }
+
+        .name {
+            font-size: 0.8em;
+            color: gray;
+            margin: 0 auto;
+            text-align: center;
+            position: fixed;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="infobox" id="info-left">
+        <h1>GitHub collaboration graphs</h1>
+        <p>This visualization shows developers' collaboration graphs on <b>GitHub</b>.</p>
+        <p>
+            Users that contribute to multiple projects represent a link among different communities of developers.
+            Those users can occupy structural holes between different communities in the network, becoming <b>Structural
+                Hole (SH) spanners</b>.
+        </p>
+        <p>Both graphs <span class="graph-num graph-1">1</span> and <span class="graph-num graph-2">2</span> are
+            developer-developer networks where <b>nodes represent
+                users</b> and <b>edges represent repositories</b> in which the users they connect both contribute.</p>
+        <p>Graph <span class="graph-num graph-1">1</span> only contains users that appear in more than one project.</p>
+        <p>Graph <span class="graph-num graph-2">2</span> represents the general network.</p>
+
+
+    </div>
+
+    <div class="infobox" id="info-right">
+        <div class="infobox-content" id="content-2a_empty">
+            <h3>Graph <span class="graph-num graph-1">1</span>: plain</h3>
+            <p class="graph-data">
+                <b>Nodes:</b> 404
+                <br>
+                <b>Edges:</b> 6214
+                <br>
+                <b>Diameter:</b> 6
+                <br>
+                <b>Assortativity:</b> 0.394653
+            </p>
+            <p>The network only contains users that appear in more than one project, to isolate more clearly a
+                knowledge-spreading network.</p>
+        </div>
+        <div class="infobox-content" id="content-2a_SH">
+            <h3>Graph <span class="graph-num graph-1">1</span>: Structural Hole spanners</h3>
+            <p class="graph-data">
+                <b>Nodes:</b> 404
+                <br>
+                <b>Edges:</b> 6214
+                <br>
+                <b>Diameter:</b> 6
+                <br>
+                <b>Assortativity:</b> 0.394653
+            </p>
+            <p>The network only contains users that appear in more than one project, to isolate more clearly a
+                knowledge-spreading network.</p>
+            <p>Structural Hole spanners detection is performed using Burt’s constraint measure. The constraint
+                coefficient uses the degree of dependence of nodes on the other nodes as the evaluation criteria.
+                The greater the value, the stronger the constraint, the stronger the dependence, and the lower the
+                ability to cross the structural hole. SH spanners will likely have a lower constraint value.
+            </p>
+            <p><b style="color:rgb(255, 0, 0)">Red</b> means a lower constraint, while <b style="color:blue">blue</b> is
+                higher</p>
+
+
+
+        </div>
+        <div class="infobox-content" id="content-2b_empty">
+            <h3>Graph <span class="graph-num graph-2">2</span>: plain</h3>
+            <p class="graph-data">
+                <b>Nodes:</b> 8290
+                <br>
+                <b>Edges:</b> 419401
+                <br>
+                <b>Diameter:</b> 7
+                <br>
+                <b>Assortativity:</b> 0.051746
+            </p>
+            <p>This is the general network, where every user in the dataset is present as a node, which allows for a
+                wide-ranging overview. </p>
+            <p>The node positions are obtained through the Fruchterman-Reingold graph drawing algorithm, explained
+                later.
+
+            </p>
+        </div>
+        <div class="infobox-content" id="content-2b_comm">
+            <h3>Graph <span class="graph-num graph-2">2</span>: communities</h3>
+            <p class="graph-data">
+                <b>Nodes:</b> 8290
+                <br>
+                <b>Edges:</b> 419401
+                <br>
+                <b>Diameter:</b> 7
+                <br>
+                <b>Assortativity:</b> 0.051746
+                <br>
+                <b>Detected communities:</b> 95
+            </p>
+            <p>This is the general network, where every user in the dataset is present as a node, which allows for a
+                wide-ranging overview. </p>
+            <p>Community detection is performed on the network using the <b>Louvain method</b>: multiple iteration heuristic
+                that starts from an initial state of considering every node as a single community and iteratively
+                improving the quality of community assignment until the gain in modularity becomes negligible.
+            </p>
+            <p>The network shows the 95 communities found by the first pass of the Louvain method.
+                Those communities numerically coincide exactly with the repositories (= 95).
+                Every detected community in the graph is assigned a different shade of color.
+            </p>
+        </div>
+        <div class="infobox-content" id="content-2b_SH">
+            <h3>Graph <span class="graph-num graph-2">2</span>: Structural Hole spanners</h3>
+            <p class="graph-data">
+                <b>Nodes:</b> 8290
+                <br>
+                <b>Edges:</b> 419401
+                <br>
+                <b>Diameter:</b> 7
+                <br>
+                <b>Assortativity:</b> 0.051746
+            </p>
+            <p>SH spanners are identified with the 350 most important users according to the PageRank metric.</p>
+            <p>PageRank gives an “importance score” to nodes by counting the number of links to a node and their
+                respective PageRank importance iteratively, until it reaches convergence.
+            </p>
+            <p>SH spanners are highlighted in <b style="color:rgb(218, 178, 4)">yellow</b>.</p>
+            <p>Nodes highlighted as SH spanners according to PageRank ≈ Nodes that were positioned in-between
+                communities by the force-directed graph drawing algorithm
+            </p>
+            </p>
+        </div>
+
+
+    </div>
+
+    <div class="selectbox">
+        <div class="tooltip">Choose a <b>graph</b></div>
+
+        <div class="radio-toolbar">
+            <input type="radio" id="2a_empty" name="graph" value="2a_empty">
+            <label for="2a_empty"><span class="graph-num graph-1">1</span>: plain</label>
+            <input type="radio" id="2a_SH" name="graph" value="2a_SH">
+            <label for="2a_SH"><span class="graph-num graph-1">1</span>: SH spanners</label>
+            <input type="radio" id="2b_empty" name="graph" value="2b_empty">
+            <label for="2b_empty"><span class="graph-num graph-2">2</span>: plain</label>
+            <input type="radio" id="2b_comm" name="graph" value="2b_comm" checked>
+            <label for="2b_comm"><span class="graph-num graph-2">2</span>: communities</label>
+            <input type="radio" id="2b_SH" name="graph" value="2b_SH">
+            <label for="2b_SH"><span class="graph-num graph-2">2</span>: SH spanners</label>
+        </div>
+    </div>
+
+    <div class="img-container">
+        <img id="graph-img" src="thesis_graphs\2b_comm.png">
+    </div>
+
+
+    <div class="name">by <strong>Alessandro Vannoni</strong></div>
+
+</body>
+
+<script>
+    const radioButtons = document.querySelectorAll('input[name="graph"]');
+    const infoContent = document.getElementsByClassName('infobox-content')
+
+    radioButtons.forEach((elem) => {
+        elem.addEventListener("change", function (event) {
+            let selectedGraph;
+            for (const radioButton of radioButtons) {
+                if (radioButton.checked) {
+                    selectedGraph = radioButton.value;
+                    break;
+                }
+            }
+            //alert(selectedGraph);
+            document.getElementById("graph-img").src = "thesis_graphs/" + selectedGraph + ".png";
+
+            for (let i = 0; i < infoContent.length; i++) {
+                infoContent[i].style.display = "none"
+            }
+            document.getElementById("content-" + selectedGraph).style.display = "block"
+        });
+    });
+
+
+</script>
