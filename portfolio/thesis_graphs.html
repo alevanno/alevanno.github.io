@@ -345,7 +345,7 @@
             for (let i = 0; i < infoContent.length; i++) {
                 anime.timeline()
                     .add({
-                        targets: [infoContent[i]],
+                        targets: [infoContent[i]], //, '.img-content'
                         opacity: [1, 0],
                         easing: "linear",
                         duration: 100,
